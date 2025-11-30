@@ -1,14 +1,18 @@
-package com.ecommerce.backend.document;
+package com.ecommerce.backend.domain;
 
 import lombok.*;
 
-@Data
-@Builder
+@ToString
+
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderItem {
+public class Product {
+
     private String productId;
     private Integer quantity;
+
+
 }
+

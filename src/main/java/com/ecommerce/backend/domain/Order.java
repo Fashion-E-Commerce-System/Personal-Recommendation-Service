@@ -1,27 +1,29 @@
-package com.ecommerce.backend.document;
+package com.ecommerce.backend.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Getter
-@Setter
-@NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "recommendations")
-public class Recommendation {
+@NoArgsConstructor
+@ToString
+
+@Document(collection = "orders")
+public class Order {
     @Id
     private String id;
-
-    @Field("username")
+    private LocalDate date;
     private String username;
+    private List<Product> products;
 
-    @Field("product_id")
-    private Integer productId;
+
 }
